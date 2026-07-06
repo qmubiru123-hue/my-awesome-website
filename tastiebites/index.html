@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastieBites - Delicious Meals Delivered</title>
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --dark: #2C2C2C;
+            --light: #f8f8f8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1080/1920/1080') center/cover no-repeat;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/id/1080/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .menu-info {
+            padding: 1.5rem;
+        }
+        
+        .menu-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .popular {
+            background: linear-gradient(135deg, #FF6B00, #FF8C00);
+            color: white;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TastieBites 🍔</div>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Order Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Craving Something Tasty?</h1>
+            <p>Fresh, delicious meals delivered straight to your door in minutes.</p>
+            <button onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });" class="cta-button">Browse Menu</button>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Our Popular Bites</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="https://picsum.photos/id/292/600/400" alt="Burger">
+                <div class="menu-info">
+                    <h3>Classic Cheeseburger</h3>
+                    <p>Juicy beef patty with melted cheese, fresh veggies & special sauce.</p>
+                    <div class="price">$12.99</div>
+                </div>
+            </div>
+            
+            <div class="menu-card popular">
+                <img src="https://picsum.photos/id/431/600/400" alt="Pizza">
+                <div class="menu-info">
+                    <h3>Margherita Pizza</h3>
+                    <p>Fresh basil, mozzarella & our signature tomato sauce on crispy crust.</p>
+                    <div class="price">$15.99</div>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <img src="https://picsum.photos/id/1080/600/400" alt="Pasta">
+                <div class="menu-info">
+                    <h3>Creamy Alfredo Pasta</h3>
+                    <p>Tender chicken in rich parmesan cream sauce with garlic bread.</p>
+                    <div class="price">$14.49</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="background: var(--light);">
+        <h2>Why TastieBites?</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.2rem;">
+            We believe good food brings people together. From farm to table, every meal is prepared with love and the freshest ingredients.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p style="text-align: center; font-size: 1.3rem;">
+            📍 Downtown • 🚀 20-35 min delivery • 📞 (555) 123-4567
+        </p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <button onclick="alert('Thanks for reaching out! Our team will contact you soon. 🍕')" class="cta-button">Order Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TastieBites. All rights reserved. | Made fresh daily ❤️</p>
+        <div class="social-links">
+            <a href="#">📸</a>
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+        </div>
+    </footer>
+</body>
+</html>
